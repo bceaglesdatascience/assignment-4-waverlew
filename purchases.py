@@ -18,12 +18,12 @@ def add_tax(costs,sales_tax):
 
 sales_cost=add_tax(costs,sales_tax)
 
-bob_sales=sales_cost[0]+sales_cost[2]
-alice_sales=sales_cost[1]
-
 final_sale={}
 
-final_sale["Bob"]=bob_sales
-final_sale["Alice"]=alice_sales
+for w, person in enumerate(people):
+    if person in final_sale:
+        final_sale[person]+=sales_cost[w]
+    else:
+        final_sale[person]=sales_cost[w]
 
 print(final_sale)
